@@ -28,7 +28,7 @@ public class NumberTransformer {
 						list.add(model);
 					}
 				} else {
-					NumberGroupModel model = new NumberGroupModel(1, childString);
+					NumberGroupModel model = new NumberGroupModel(i * 2 + 1, childString);
 					list.add(model);
 				}
 			}
