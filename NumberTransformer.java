@@ -28,7 +28,13 @@ public class NumberTransformer {
 						list.add(model);
 					}
 				} else {
-					NumberGroupModel model = new NumberGroupModel(i * 2 + 1, childString);
+					int level = 1;
+					if (i == 1) {
+						if (childString.length() == 1) {
+							level = 0;
+						}
+					}
+					NumberGroupModel model = new NumberGroupModel(i * 2 + level, childString);
 					list.add(model);
 				}
 			}
