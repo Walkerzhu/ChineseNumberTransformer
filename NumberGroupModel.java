@@ -11,6 +11,11 @@ public class NumberGroupModel {
 	 *   3 个级，替换 12~16
 	 */
      private int level;
+     private boolean isFirst = false;
+     public void setFirst(boolean first) {
+		isFirst = first;
+	}
+
      private String keyword;
      public NumberGroupModel(int level, String keyword) {
 		this.keyword = keyword;
@@ -33,7 +38,9 @@ public class NumberGroupModel {
 				 String lastString;
 				 String nextString = null;
 				if (i == 0) {
-					lastString = "万";
+					if (!isFirst) {
+						lastString = "万";
+					}
 				} else {
 					lastString = keyword.substring(i - 1, i);
 				}

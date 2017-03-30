@@ -38,14 +38,19 @@ public class NumberModel {
 		this.nextUnit = nextUnit;
 	}
      public int getValue() {
-    	    if (nextUnit != null) {
+    	     if (nextUnit != null) {
 				return numMap.get(keyWord) * numMap.get(nextUnit);
 			} else {
-				if (lastUnit.equals("零")) {
+				if (lastUnit != null) {
+				    if (lastUnit.equals("零")) {
 					return numMap.get(keyWord);
-				} else {
-					return numMap.get(keyWord) * numMap.get(lastUnit) / 10;
-				}
+				     } else {
+						return numMap.get(keyWord) * numMap.get(lastUnit) / 10;
+			          }
+			
+			} else {
+				return numMap.get(keyWord);
 			}
+		}
 	}
 }

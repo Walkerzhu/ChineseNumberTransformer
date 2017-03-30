@@ -44,6 +44,10 @@ public class NumberTransformer {
 				list.add(model);
 			}
 		}
+               if (list.size() > 0) {
+			NumberGroupModel model = list.get(0);
+			model.setFirst(true);
+		}
 		handleNumberModelList();
 	}
 	
